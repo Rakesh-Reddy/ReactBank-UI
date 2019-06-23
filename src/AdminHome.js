@@ -25,7 +25,6 @@ class AdminHome extends Component {
 
     approve = () => {
         axios.get(`http://10.117.189.117:6677/ingbanking/api/approval/${this.props.data.accountId}`).then((response) => {
-            console.log('create account',response);
         }).catch(function (error) {
         });
     }
@@ -35,7 +34,6 @@ class AdminHome extends Component {
     }
 
     render() {
-        console.log("hihi")
         return (
             <div>
                 <div className="row">

@@ -53,7 +53,6 @@ class Home extends Component {
 
     gotoUserLogin = () => {
         this.getDataUserLogin().then(response => {
-            console.log('login', response);
             this.props.getUserData(response.data, this.props);
         })
     }
@@ -61,7 +60,6 @@ class Home extends Component {
         return new Promise((resolve, reject) => {
             axios.post('http://192.168.1.104:9099/breachmanagement/api/login', this.state.userLogin).then((response) => {
                 resolve(response);
-                console.log('login', response)
             }).catch(function (error) {
                 reject(error);
             });
@@ -70,7 +68,6 @@ class Home extends Component {
 
     gotoRegistration = () => {
         this.getDataRegistration().then(response => {
-            console.log('registration', response);
             swal('Happy to Have You, Your Registration is under Progress')
             //   this.setState({ responseData: response.data });
         })
@@ -79,7 +76,6 @@ class Home extends Component {
         return new Promise((resolve, reject) => {
             axios.post('http://10.117.189.117:6677/ingbanking/api/createAccount', this.state.userRegistration).then((response) => {
                 resolve(response);
-                console.log('userRegistration', response)
             }).catch(function (error) {
                 reject(error);
             });
